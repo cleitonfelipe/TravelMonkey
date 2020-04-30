@@ -74,6 +74,15 @@
                 </Label>
             </StackLayout>
 
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="Start" VerticalOptions="Center" Text="Sentiment Text" FontFamily="LatoBold" FontSize="20" Margin="20,20,20,0" TextColor="Black" />
+                <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="#2687ee" Text="ANALYSIS" FontSize="12" FontFamily="LatoBold" Margin="20,20,20,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TextSentiment_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
             <ScrollView Orientation="Horizontal">
                 <StackLayout Spacing="0" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Pictures}" HeightRequest="120">
                     <BindableLayout.EmptyViewTemplate>

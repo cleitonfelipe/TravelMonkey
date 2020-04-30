@@ -36,6 +36,11 @@ namespace TravelMonkey.Views
             await Navigation.PushModalAsync(new AddPicturePage());
         }
 
+        private async void TextSentiment_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new SentimentResultPage());
+        }
+
         private async void Entry_Completed(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TranslateTextEntry.Text))

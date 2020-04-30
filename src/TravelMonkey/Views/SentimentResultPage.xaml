@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TravelMonkey.Views.SentimentResultPage"
+             xmlns:effect="clr-namespace:TravelMonkey.Effects"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundGradientStartColor="SteelBlue" BackgroundGradientEndColor="LightGray" BackgroundGradientAngle="40">
+            <StackLayout>
+                <StackLayout.Effects>
+                    <effect:SafeAreaPaddingEffect />
+                </StackLayout.Effects>
+                <yummy:PancakeView BorderIsDashed="True" CornerRadius="50, 50, 50, 50">
+                    <Button Text="Close" Clicked="Button_Clicked" FontFamily="LatoBold" />
+                </yummy:PancakeView>
+                <yummy:PancakeView BorderIsDashed="True" CornerRadius="10, 10, 10, 10" BackgroundColor="Azure" HasShadow="True" Margin="10">
+                    <Entry Placeholder="Add Text here..." Text="{Binding UserInputEntryText}" />
+                </yummy:PancakeView>
+                <yummy:PancakeView BorderIsDashed="True" CornerRadius="50, 50, 50, 50" HasShadow="True" Margin="10">
+                    <Button Text="Analysis" BackgroundColor="LightBlue" Command="{Binding SentimentTextCommand}"/>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView BorderIsDashed="True" CornerRadius="50, 50, 50, 50">
+                    <Label
+                FontSize="100"
+                Text="{Binding EmojiLabelText}"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions= "Center" VerticalOptions= "Center" />
+                </yummy:PancakeView>
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
